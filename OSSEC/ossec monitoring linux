@@ -9,17 +9,22 @@ OSSEC HIDS INSTALLATION GUIDE (Manager + Agent)
     
     Step 1: Update System
     
-      sudo apt update && sudo apt upgrade -y
+      - sudo apt update && sudo apt upgrade -y
     
     Step 2: Install Dependencies
       
-      sudo apt install gcc make build-essential inotify-tools libevent-dev zlib1g-dev libpcre2-dev libssl-dev curl -y
-    
+          sudo apt install gcc make build-essential inotify-tools libevent-dev zlib1g-dev libpcre2-dev libssl-dev curl -y \
+           sudo apt-get update \
+           sudo apt-get install libsystemd-dev 
+
      Step 3: Download and Extract OSSEC
       
-          curl -L -O https://github.com/ossec/ossec-hids/archive/refs/tags/3.7.0.tar.gz
-          tar -xvzf 3.7.0.tar.gz
-          cd ossec-hids-3.7.0
+         -  curl -L -O https://github.com/ossec/ossec-hids/archive/refs/tags/3.7.0.tar.gz
+                    - sudo apt update
+                    - sudo apt install --reinstall ca-certificates
+
+         -  tar -xvzf 3.7.0.tar.gz
+         -  cd ossec-hids-3.7.0
     
      Step 4: Run the Install Script
           
@@ -40,7 +45,11 @@ OSSEC HIDS INSTALLATION GUIDE (Manager + Agent)
 
     Step 5: Start OSSEC
    
-        sudo /var/ossec/bin/ossec-control start
+        - sudo /var/ossec/bin/ossec-control start
+
+        - sudo nano /var/ossec/etc/ossec.conf
+        - echo $?
+
 
 =================================INSTALLATION OF OSSEC AGENT ON CLIENT (LINUX)============================================
 
@@ -48,20 +57,27 @@ OSSEC HIDS INSTALLATION GUIDE (Manager + Agent)
          The agent monitors its own system and sends logs to the manager.
 
    Step 1: Install Dependencies
-        Sudo apt update
-        sudo apt install gcc make build-essential inotify-tools libevent-dev zlib1g-dev libpcre2-dev libssl-dev curl -y
+        - Sudo apt update
+        - sudo apt install gcc make build-essential inotify-tools libevent-dev zlib1g-dev libpcre2-dev libssl-dev curl -y
+        - sudo apt-get update \
+        - sudo apt-get install libsystemd-dev 
 
    Step 2: Download and Extract OSSEC Agent
     
-          curl -L -O https://github.com/ossec/ossec-hids/archive/refs/tags/3.7.0.tar.gz
-          tar -xvzf 3.7.0.tar.gz
-          cd ossec-hids-3.7.0
+         - curl -L -O https://github.com/ossec/ossec-hids/archive/refs/tags/3.7.0.tar.gz
+                     - sudo apt update
+                    - sudo apt install --reinstall ca-certificates
+
+         - tar -xvzf 3.7.0.tar.gz
+         - cd ossec-hids-3.7.0
+
     
    Step 3: Run Install Script
         
-        sudo ./install.sh
-        During Setup:
-        Choose: agent
+       - sudo ./install.sh
+            During Setup:  
+                - en
+                - Choose: agent
     
     Enter the manager IP when prompted
     
