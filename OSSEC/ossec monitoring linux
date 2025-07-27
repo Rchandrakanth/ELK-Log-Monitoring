@@ -99,5 +99,13 @@ OSSEC HIDS INSTALLATION GUIDE (Manager + Agent)
 
     You should see the agent connected.
     
-  =======================================================================================  
-    
+  =======================================================================================
+
+OSSEC is set to monitor these log files by default:
+        
+        /var/log/dpkg.log (package installation logs on Debian/Ubuntu)
+        
+        /var/log/apache2/error.log (Apache error logs)
+        
+        /var/log/apache2/access.log (Apache access logs)
+            
