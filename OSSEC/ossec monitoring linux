@@ -110,7 +110,7 @@ OSSEC HIDS INSTALLATION GUIDE (Manager + Agent)
 
     On Manager:
    
-          sudo /var/ossec/bin/list_agents
+          sudo /var/ossec/bin/manage_agents
           sudo /var/ossec/bin/agent_control -l
 
     You should see the agent connected.
