@@ -80,10 +80,10 @@ OSSEC HIDS INSTALLATION GUIDE (Manager + Agent)
                 - Choose: agent
     
     Enter the manager IP when prompted
-    
-     Step 4: Start OSSEC Agent
-    
-            sudo /var/ossec/bin/ossec-control start
+                        
+                   don't run --->      Step 4: Start OSSEC Agent
+                        
+                                sudo /var/ossec/bin/ossec-control start
     
     
     PART 3: LINK AGENT TO MANAGER
