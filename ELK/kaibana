@@ -24,7 +24,9 @@
            }
 confirm the elastic search :-
        to check contains index exists and has documents or not
+
                   - curl -X GET "localhost:9200/apt_logs/_search?size=1&pretty"  
+
       - if u get the document then u want to create kibana 
 
 formats of index pattern (creating index pattern):-
