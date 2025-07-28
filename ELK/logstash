@@ -1,0 +1,49 @@
+
+in /tmp
+
+  - wget https://artifacts.elastic.co/downloads/logstash/logstash-8.18.4-amd64.deb
+  -  sudo dpkg -i logstash-8.18.4-amd64.deb
+
+  -  sudo /usr/share/logstash/bin/logstash --version
+
+for paracticing:
+
+  - sudo nano pipe.conf 
+
+        input {
+               stdin {}
+       }
+        output {
+               stdout {codec => rubydebug}
+        }
+  - echo "helloworld" | sudo  /usr/share/logstash/bin/logstash -f /home/shuhari/pipe.conf
+
+  to change to captial letters   --> uncomment the previous code present in the pipe.conf
+  - add the 
+            
+                input {
+                    stdin {}
+                }
+                
+                filter {
+                    mutate {
+                        uppercase => ["message"]
+                    }
+                }
+                
+                output {
+                    stdout {
+                        codec => rubydebug
+                    }
+                }
+
+  - echo "helloworld" | sudo  /usr/share/logstash/bin/logstash -f /home/shuhari/pipe.conf
+========================================================================
+
+- sudo  nano /var/log/apt/history.log
+
+
+
+
+
+  
