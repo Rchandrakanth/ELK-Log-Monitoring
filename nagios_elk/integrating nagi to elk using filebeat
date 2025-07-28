@@ -56,6 +56,10 @@
 
         - successfully integrate the nagios to ELK using filebeat 
 
+                check 
+                    1.hostip 
+                    2. log.file.path
+                    3. @timestamp
 
         
 
