@@ -38,7 +38,7 @@
 
         - curl -X GET "192.168.80.128:9200/_cat/indices?v"   --> check the indices 
                                       filebeat-7.17   -> u will see the like this
-                      type elk ip --> Lists all indices in your Elasticsearch cluster
+                      above ip is --> Lists all indices in your Elasticsearch cluster
 
         
          - Go to Kibana (open in browser) :-
