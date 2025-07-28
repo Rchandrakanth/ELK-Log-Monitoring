@@ -36,6 +36,10 @@
  - sudo systemctl enable --now elasticsearch
  - sudo systemctl status elasticsearch
 
+  - sudo ss -tuln | grep 9200
+  - sudo journalctl -u elasticsearch -n 50 --no-pager  --> to see the logs
+
+
   - curl http://127.0.0.1:9200/
   - curl -X GET "http://localhost:9200/?pretty"  --> succesfully elasticsearch is running
 
