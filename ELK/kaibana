@@ -42,6 +42,8 @@ formats of index pattern (creating index pattern):-
       - Select the data view: apt_logs
             - You’ll see the logs of apt 
 
+ Kibana is now successfully displaying Logstash  data
+
               
 
 
