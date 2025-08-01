@@ -1,0 +1,19 @@
+
+    sudo tail -f /var/log/logstash/logstash-plain.log   -> u will see pipeline is running -> Starting server on port: 5044
+    
+  - sudo tcpdump -i any udp port 5140
+  - sudo tcpdump -n -i ens33 udp port 5140
+
+  - sudo tail -f /var/log/logstash/logstash-plain.log
+  - sudo tail -f /var/log/logstash/pfsense_debug.log
+  - sudo tcpdump -nni any udp port 5140   -> test Logs Are Arriving or not
+
+  -sudo journalctl -u logstash -f | grep "pfsense"
+
+  sudo apt update
+sudo apt install netcat
+
+curl -X GET "localhost:9200/pfsense-logs-*/_search?pretty"
+
+
+
