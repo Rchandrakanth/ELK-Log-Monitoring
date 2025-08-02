@@ -18,6 +18,8 @@
     - sudo systemctl restart filebeat
     -  sudo filebeat test config 
     -  sudo filebeat test output
+    - sudo /usr/share/filebeat/bin/filebeat -e -c /etc/filebeat/filebeat.yml -d "publish,harvester,input"
+                                                                    - to run debug mode -> harvesting 
 
 - in ELK server:-
         - sudo nano /etc/logstash/conf.d/ossec.conf  --> parsing ossec logs logstash to ELK 
