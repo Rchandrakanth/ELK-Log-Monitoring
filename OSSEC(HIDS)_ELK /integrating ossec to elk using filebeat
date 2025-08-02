@@ -16,6 +16,8 @@
          hosts: ["192.168.80.128:5044"]      --> add in logstash output section
 
     - sudo systemctl restart filebeat
+    -  sudo filebeat test config 
+    -  sudo filebeat test output
 
 - in ELK server:-
         - sudo nano /etc/logstash/conf.d/ossec.conf  --> parsing ossec logs logstash to ELK 
