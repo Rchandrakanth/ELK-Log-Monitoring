@@ -6,10 +6,6 @@
 [![Nagios](https://img.shields.io/badge/Nagios-Monitoring-green)]()
 
 ---
-ELK Log Monitoring Platform
-
-Technologies: ELK, OSSEC, Suricata, Nagios
-
 📌 Project Overview
 
 This project demonstrates the implementation of a SOC-like monitoring environment using the ELK Stack (Elasticsearch, Logstash, Kibana) integrated with Filebeat to collect, parse, and visualize logs from:
