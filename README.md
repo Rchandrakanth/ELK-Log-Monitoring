@@ -65,6 +65,7 @@ Suricata configured to log suspicious traffic (ICMP floods, scans).
 Logs parsed and visualized in Kibana.
 
 
+![Nagios](https://raw.githubusercontent.com/Rchandrakanth/ELK-Log-Monitoring/master/assests/nagios.png)
 
 
 
