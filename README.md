@@ -7,64 +7,63 @@
 
 ---
 
-## Project Overview
-A SOC-style centralized monitoring platform using the ELK Stack to aggregate and visualize logs from critical security and infrastructure tools:
-- **Nagios** — Monitors system/services health  
-- **OSSEC HIDS** — Tracks host-based anomalies & integrity  
-- **Suricata IDS/IPS** — Detects network threats
+## 📌 Project Overview
+This project demonstrates the implementation of a **SOC-like monitoring environment** using the **ELK Stack (Elasticsearch, Logstash, Kibana)** integrated with **Filebeat** to collect, parse, and visualize logs from:
+- **Nagios** (Infrastructure & Service Monitoring)
+- **OSSEC HIDS** (Host-based Intrusion Detection)
+- **Suricata IDS/IPS** (Network Intrusion Detection & Prevention)
 
-Provides unified visibility, rapid detection, and threat correlation in real time.
-
----
-
-## Tech Stack
-
-| Tool         | Purpose                             |
-|--------------|-------------------------------------|
-| Nagios       | Infrastructure & service health     |
-| OSSEC HIDS   | Host-level intrusion detection      |
-| Suricata     | Network-based anomaly detection     |
-| Filebeat     | Log forwarding                      |
-| Logstash     | Log parsing & normalization         |
-| Elasticsearch| Central log indexing                |
-| Kibana       | Data visualization & dashboards     |
+The goal is to enable **centralized log monitoring, real-time visualization, and alert correlation** for security and infrastructure events.
 
 ---
 
-## Architecture Diagram
-
-*Optional: Add an architecture image illustrating data flow from agents (Nagios, OSSEC, Suricata) → Filebeat → Logstash → Elasticsearch → Kibana.*
+## ⚙️ Architecture
+- **Nagios** → Monitors system health (CPU, memory, services, load, etc.) and sends alerts.  
+- **OSSEC HIDS** → Monitors host activities, logs, and file integrity with agent-server communication.  
+- **Suricata IDS/IPS** → Detects & logs suspicious/malicious network traffic (e.g., ICMP flood, port scans).  
+- **Filebeat** → Forwards logs from each tool into **Logstash** → **Elasticsearch** → **Kibana Dashboard**.  
 
 ---
 
-## Setup & Deployment
+## 🔹 Tools Used
+- **Nagios Core** (Service & Host Monitoring)
+- **OSSEC HIDS v3.7.0** (Host-based Intrusion Detection)
+- **Suricata IDS/IPS** (Network Threat Detection)
+- **ELK Stack (Elasticsearch, Logstash, Kibana)** (Centralized log storage & visualization)
+- **Filebeat** (Log shipping)
 
-```bash
-# Clone repository
-git clone https://github.com/Rchandrakanth/ELK-Log-Monitoring.git
-cd ELK-Log-Monitoring
+---
 
-# Install & configure Nagios, OSSEC, Suricata (see individual setup files)
-# Example: Launch Filebeat
-filebeat -e -c filebeat.yml
+## 📊 Sample Dashboards & Logs
 
-# Start Logstash:
-logstash -f logstash_pipeline.conf
+### 1️⃣ Nagios Integration
+- Collected Nagios alerts (service failures, high load, HTTP/SSH monitoring).
+- Visualized Nagios logs in **Kibana**.
 
-# Launch Elasticsearch & Kibana (Docker-compose / local)
-docker-compose up -d
+![Nagios Monitoring](screenshots/nagios-dashboard.png)
 
-# Access Dashboard
-# Kibana: http://localhost:5601
-```
+---
 
-Highlights & Capabilities
+### 2️⃣ OSSEC HIDS Integration
+- OSSEC server-agent setup with log forwarding.
+- Detects suspicious login attempts, server restarts, and file integrity violations.
+- Alerts sent to **ELK** for centralized monitoring.
 
-Scalable Monitoring: Collect logs across tools and centralize insights.
+![OSSEC Alerts](screenshots/ossec-agent.png)
 
-Structured Alerts: Detects issues like intrusion attempts, service failures, and malicious traffic.
+---
 
-Real-Time Dashboards: Visualize logs instantly using Kibana.
+### 3️⃣ Suricata IDS/IPS Integration
+- Suricata configured to log suspicious traffic (ICMP floods, scans).
+- Logs parsed and visualized in **Kibana**.
 
-Modular Design: Easily add new log sources or visualization features.
+![Suricata Logs](screenshots/suricata-dashboard.png)
 
+---
+
+## 🚀 How It Works
+1. **Nagios, OSSEC, Suricata** generate logs locally.  
+2. **Filebeat** collects these logs and forwards them to **Logstash**.  
+3. **Logstash** parses and normalizes the logs.  
+4. **Elasticsearch** indexes the logs.  
+5. **Kibana** provides real-time dashboards and visualization.  
