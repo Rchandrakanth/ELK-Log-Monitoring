@@ -45,6 +45,7 @@ The goal is to enable centralized log monitoring, real-time visualization, and a
 - Visualized Nagios logs in Kibana.  
 
 ![Nagios](https://raw.githubusercontent.com/Rchandrakanth/ELK-Log-Monitoring/master/assests/nagios.png)  
+![Nagios ELK Dashboard](https://raw.githubusercontent.com/Rchandrakanth/ELK-Log-Monitoring/master/assests/nagios-elk.png)
 
 ---
 
